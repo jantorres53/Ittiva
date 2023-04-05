@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100" *ngIf="product">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 ">
+            <div class="card-header">
+              <h2 class="fw-bold mb-2 text-uppercase">Añadir cliente</h2>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>ID: </b>{{product.id}}</li>
+                    <li class="list-group-item"><b>Nombre: </b>{{product.nombre}}</li>
+                    <li class="list-group-item"><b>Edad: </b>{{product.edad}} </li>
+                    <li class="list-group-item"><b>Telefono: </b>{{product.telefono}} </li>
+                    <li class="list-group-item"><b>Correo: </b>{{product.correo}} </li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-outline-primary w-100" routerLink="/">
+                    <i class="fas fa-arrow-alt-circle-left"></i> Back
+                </button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

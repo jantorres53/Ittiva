@@ -1,0 +1,46 @@
+<app-menu></app-menu>
+
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+            <div class="card-header">
+              <h2 class="fw-bold mb-2 text-uppercase">Añadir cliente</h2>
+              <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                  <div class="mb-3">
+                      <input type="text" class="form-control" id="name" name="nombre" placeholder="Nombre"
+                          autocomplete="off" required [(ngModel)]="nombre" >
+                  </div>
+                  <br>
+                  <div class="mb-3">
+                      <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad"
+                          autocomplete="off" required [(ngModel)]="edad">
+                  </div>
+                  <br>
+                  <div class="mb-3">
+                      <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono"
+                          autocomplete="off" required [(ngModel)]="telefono">
+                  </div>
+                  <br>
+                  <div class="mb-3">
+                      <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo"
+                          autocomplete="off" required [(ngModel)]="correo">
+                  </div>
+                  <br>
+                  <button class="btn btn-outline-success w-100 mb-3" [disabled]="!f.valid">
+                      <i class="fas fa-plus-circle"></i> Create
+                  </button>
+                  <br>
+                  <button class="btn btn-outline-primary w-100" routerLink="/">
+                      <i class="fas fa-arrow-alt-circle-left"></i> Back
+                  </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

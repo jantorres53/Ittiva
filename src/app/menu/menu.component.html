@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Gestión de Usuarios y privilegios</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li *ngIf="isLogged" class="nav-item">
+          <a class="nav-link" routerLink="/"><i class="fa-solid fa-house-chimney-window"></i> Home</a>
+        </li>
+        <li *ngIf="isAdmin || isRecepcionista " class="nav-item" >
+          <a class="nav-link" routerLink="/create"><i class="fa-solid fa-address-card"></i>Añadir cliente</a>
+        </li>
+        <li *ngIf="isAdmin" class="nav-item" >
+          <a class="nav-link" routerLink="/register"><i class="fa-solid fa-address-card"></i>Añadir empleado</a>
+        </li>
+
+      </ul>
+      <form class="d-flex" role="search">
+        <span *ngIf="isLogged" class="navbar-text me-3">
+          {{URL}}
+          {{username}}
+        </span>
+        <button *ngIf="!isLogged" class="btn btn-outline-success" type="submit" routerLink="/login"><i class="fa-solid fa-sign-in-alt"></i> Log In</button>
+        <button *ngIf="isLogged" class="btn btn-outline-danger" type="submit" (click)="logOut()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+      </form>
+    </div>
+  </div>
+</nav>
